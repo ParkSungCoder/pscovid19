@@ -1,0 +1,159 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Navbar ~~~~~ */
+
+.navbar {
+
+	background: abs.$vars-c-black-dark;
+
+	height: 4rem;
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	padding: .6rem;
+	
+	transition: all .2s;
+
+	@include abs.mxs-respond(big-desktop){
+		height: 6rem;
+	}
+
+	&:hover {
+		background: linear-gradient(135deg, rgba(11, 11, 11, 0.8) 25%, rgba(27, 27, 27, 0.8) 35%, rgba(27, 27, 27, 0.8) 65%, rgba(11, 11, 11, 0.8) 75%);
+	}
+
+
+
+	&-toggle { display: none; }
+	&-toggle-up { height: 100%; }
+	&-toggle-down {
+		height: 0;
+		visibility: hidden;
+	}
+
+	&-toggle:checked ~ .navbar-label > .navbar-btn {
+		top: 2rem;
+		left: 2rem;
+	} 
+	&-toggle:checked ~ .navbar-label > .navbar-btn > .navbar-toggle-up {
+		height: 0%;
+		visibility: hidden;
+	}
+	&-toggle:checked ~ .navbar-label > .navbar-btn > .navbar-toggle-down {
+		height: 100%;
+		visibility: visible;
+	}
+	&-toggle:checked ~ .navbar > * {
+		display:none;
+	}
+	&-toggle:checked ~ .navbar {
+		height: 0;
+		padding: 0;
+	}
+
+
+	&-btn {
+
+    background: rgba(0, 0, 0, 0.6);
+		
+		width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    position: fixed; 
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1500;
+
+    display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		
+		transition: all .2s;
+
+
+    span { 
+    	font-size: 1.5rem;
+    	transition: all .2s .2s;
+    }
+
+    &:hover { transform: translate(-50%,.5rem) scale(1.2); } 
+    &:active { border: abs.$vars-toggle-btn crimson; }
+		&:hover > span { color: crimson; }
+	}
+}
+
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+
+.navbar {
+	
+	&-btn {
+
+		&:hover > span { 
+			@include abs.mxs-respond(big-desktop) {
+
+			}
+
+			@include abs.mxs-respond(tab-land) {
+
+			}
+
+			@include abs.mxs-respond(tab-port) {
+		  	color: abs.$vars-c-yellow-light;
+			}
+
+			@include abs.mxs-respond(phone) {
+		  	color: abs.$vars-c-yellow-light;
+			}
+		}
+	  
+	  &:active { 
+	  	@include abs.mxs-respond(big-desktop) {
+
+			}
+
+			@include abs.mxs-respond(tab-land) {
+
+			}
+
+			@include abs.mxs-respond(tab-port) {
+		  	color: abs.$vars-c-yellow-light;
+				border: 2px solid abs.$vars-c-yellow-light;
+			}
+
+			@include abs.mxs-respond(phone) {
+		  	color: abs.$vars-c-yellow-light;
+				border: 2px solid abs.$vars-c-yellow-light;
+			}
+	  }
+	}
+}
+
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

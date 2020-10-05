@@ -1,0 +1,194 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Section Footer ~~~~~ */
+
+.footer {
+	
+	&__head {		
+		flex: 1;
+		height: 100%;
+
+		display: flex; 
+		justify-content: flex-end;
+		align-items: center;
+		
+		padding-right: 3rem;
+
+		h2 {
+			font-size: 4rem;
+			
+			background: linear-gradient(145deg, rgb(137, 8, 33), rgb(231, 12, 55));
+			background-clip: text;
+			color: transparent;
+			
+			position: relative;
+
+			&::before { 
+        content: '';
+        display: inline-block;
+        
+        height: 5rem;
+        width: 5rem;
+
+        background: green;
+        background: url(../assets/ci1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        position: absolute;
+        left: -6.5rem;
+        top: -.5rem;
+        
+        margin-right: .5rem;
+      }
+		}
+	}
+
+
+	&__details {
+
+		flex: 1;
+		height: 100%;
+
+		display: flex; 
+		align-items: center;
+
+		padding-left: 3rem;
+
+		p {
+			display: inline-block;
+
+			background: linear-gradient(145deg, rgb(137, 8, 33), rgb(231, 12, 55));
+			background-clip: text;
+			color: transparent;
+			
+			padding: 1rem 0rem 1rem;
+			border-top: 2px solid rgb(110, 9, 29);
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~ Section Footer ~~~~~ */
+
+.footer {
+	
+	&__head {		
+		
+		@include abs.mxs-respond(desktop) {
+
+		}
+
+		@include abs.mxs-respond(tab-land) {
+
+		}
+
+		@include abs.mxs-respond(tab-port) {
+			padding: 0;
+			margin-bottom: 2.5rem;
+		}
+
+		@include abs.mxs-respond(phone) {
+			padding: 0;
+			margin-bottom: 2.5rem;
+		}
+
+
+		h2 {
+
+			@include abs.mxs-respond(tab-port) {
+				padding: 0;
+				font-size: 3rem;
+		  	color: abs.$vars-c-yellow-light;
+			}
+
+			@include abs.mxs-respond(phone) {
+				padding: 0;
+				font-size: 2.5rem;
+		  	color: abs.$vars-c-yellow-light;
+			}
+
+			&::before { 
+
+				@include abs.mxs-respond(big-desktop) {
+
+				}
+
+        @include abs.mxs-respond(tab-land) {
+
+				}
+
+        @include abs.mxs-respond(tab-port) {
+					height: 4.5rem;
+	        width: 4.5rem;
+	        left: -5.5rem;
+	        top: -.8rem;
+	        filter: grayscale(1);
+				}
+
+        @include abs.mxs-respond(phone) {
+					height: 4rem;
+	        width: 4rem;
+	        left: -4.5rem;
+	        filter: grayscale(1);
+				}
+      }
+		}
+	}
+
+
+	&__details {
+
+		@include abs.mxs-respond(big-desktop) {
+
+		}
+
+		@include abs.mxs-respond(tab-land) {
+
+		}
+
+		@include abs.mxs-respond(tab-port) {
+			padding: 0;
+		}
+
+		@include abs.mxs-respond(phone) {
+			padding: 0;
+		}
+
+		p {
+
+			@include abs.mxs-respond(big-desktop) {
+
+			}
+
+			@include abs.mxs-respond(tab-land) {
+
+			}
+
+			@include abs.mxs-respond(tab-port) {
+		  	color: abs.$vars-c-yellow-light;
+				border-top: 2px solid abs.$vars-c-yellow-light;
+			}
+
+			@include abs.mxs-respond(phone) {
+		  	color: abs.$vars-c-yellow-light;
+				border-top: 2px solid abs.$vars-c-yellow-light;
+			}
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

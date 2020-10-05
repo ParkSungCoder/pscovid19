@@ -1,0 +1,58 @@
+
+
+
+
+
+/* ~~~~~ Colors ~~~~~ */
+
+$c-primary: crimson;
+$c-primary-shades: #CC1338;
+$c-primary-tints: #EA1943;
+$c-primary-hue: #DB145E;
+$c-primary-temp: #BF1453;
+
+$c-grey: #545454;
+$c-grey-dark: #242424;
+$c-grey-light: #787878;
+
+$c-white: #f5f5f5;
+$c-white-dark: #e5e5e5; 
+
+$c-black: #1B1B1B;
+$c-black-dark: #0b0b0b;
+$c-black-light: #2b2b2b;
+
+$c-yellow: #DBDB14;
+$c-yellow-light: #DBB414;
+$c-green: #3CDB14;
+$c-green-light: #A0DB14;
+
+
+
+
+
+/* ~~~~~ Gradients ~~~~~ */
+
+$gradient-header: linear-gradient(45deg, $c-primary 20%,$c-yellow 30%,$c-yellow 40%,$c-green 60%,$c-green 70%,crimson 80%,$c-primary);
+
+$gradient-header-heading: linear-gradient(65deg, $c-yellow 15%,$c-green 40%, $c-green 60%,$c-primary 80%);
+
+$gradient-header-clock: linear-gradient(65deg, $c-green 33%,$c-yellow 43%, $c-yellow 66%,$c-primary 76%);
+
+
+
+
+
+/* ~~~~~ Borders ~~~~~ */
+
+$l-border: 2px solid $c-primary;
+$b-border: 2px solid $c-primary;
+$toggle-btn: 1px solid;
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

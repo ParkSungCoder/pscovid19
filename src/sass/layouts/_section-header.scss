@@ -1,0 +1,215 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Section Header ~~~~~ */
+
+.section-header {
+	
+	&__heading, &__clock { scroll-snap-align: start; color: transparent; }
+
+	&__heading-cont {
+   	animation: fadeIn-left 1s 3s cubic-bezier(.1,-0.5,.5,1.5) backwards;			
+	}
+
+
+	&__heading {
+		font-size: 14rem;
+    text-align: right;
+    line-height: 1.2;
+    
+    background: abs.$vars-gradient-header-heading;
+    background-clip: text;
+	}
+
+	&__clock {
+		width: 100%;
+		
+		font-size: 2rem;
+		text-align: right;
+		line-height: 1.6;
+		
+		margin-top: 16rem;
+
+		
+    &-date, &-time {
+    	background: abs.$vars-gradient-header-clock;
+	    background-clip: text;
+    }
+	}
+
+
+	&__global {
+		
+		width: 28rem;
+		height: 28rem;
+		
+		border-radius: .5rem;
+		cursor: pointer;
+
+		perspective: 1000px;
+		margin-top: 2rem;
+		margin-left: auto;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		transition: all 1s;
+		
+		&:hover { box-shadow: 0 0 2rem black; }
+
+
+		&-front, &-back {
+			width: 80%;
+			height: 80%;
+			
+			filter: grayscale(1);
+			backface-visibility: hidden;
+			
+			position: absolute;
+			
+			transition: all 1s;
+
+			
+			&:hover { filter: none; }
+		}
+		
+		&-back { transform: rotateY(180deg); }
+	}
+}
+
+
+
+
+
+/* ~~~~~ Section Header Media Queries ~~~~~ */
+
+.section-header {
+
+	&__heading {
+
+    @include abs.mxs-respond(big-desktop) {
+			font-size: 18rem; 
+			margin-top: 6rem;
+		}
+
+		@include abs.mxs-respond(tab-land) {
+
+		}
+
+    @include abs.mxs-respond(tab-port) {
+			text-align: center;
+			font-size: 10rem; 
+			margin-top: 4rem;
+
+			color: abs.$vars-c-yellow-light;
+			background: transparent;
+			background-clip: border-box;
+		}
+
+    @include abs.mxs-respond(phone) {
+			text-align: center;
+			font-size: 5rem; 
+			margin-top: 4rem;
+
+			color: abs.$vars-c-yellow-light;
+			background: transparent;
+			background-clip: border-box;
+		}
+	}
+
+
+	&__clock {
+
+		@include abs.mxs-respond(big-desktop) {
+			font-size: 4rem; 
+			margin: 22rem auto 
+		}
+
+		@include abs.mxs-respond(tab-land) {
+
+		}
+
+		@include abs.mxs-respond(tab-port) {
+			text-align: center;
+			font-size: 2.5rem; 
+			margin: 18rem auto; 
+
+			color: abs.$vars-c-yellow-light;
+			background: transparent;
+			background-clip: border-box;
+		}
+
+		@include abs.mxs-respond(phone) {
+			text-align: center;
+			font-size: 1.5rem; 
+			margin: 12rem auto;
+
+			color: abs.$vars-c-yellow-light;
+			background: transparent;
+			background-clip: border-box;
+		}
+	}
+
+
+	&__global {
+
+		@include abs.mxs-respond(big-desktop) {
+			margin-top: 26rem;
+			width: 36rem;
+			height: 36rem;
+		}
+
+		@include abs.mxs-respond(tab-land) {
+
+		}
+
+		@include abs.mxs-respond(tab-port) {
+			margin: 6rem auto;
+			width: 30rem;
+			height: 30rem;
+		}
+
+		@include abs.mxs-respond(phone) {
+			margin: 11rem auto;
+			width: 20rem;
+			height: 20rem;
+		}
+
+
+		&-front, &-back {
+
+			@include abs.mxs-respond(big-desktop) {
+
+			}
+
+			@include abs.mxs-respond(tab-land) {
+
+			}
+
+			@include abs.mxs-respond(tab-port) {
+
+			}
+
+			@include abs.mxs-respond(phone){
+				width: 90%;
+				height: 90%;
+				filter: grayscale(0);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

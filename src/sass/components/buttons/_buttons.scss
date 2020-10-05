@@ -1,0 +1,177 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Button Flipper ~~~~~ */
+
+.flipper {
+	
+	&-input { display: none; }
+
+	&-input:checked ~ .section-header__global-front { transform: rotateY(180deg); }
+	&-input:checked ~ .section-header__global-back { transform: rotateY(360deg); }
+
+
+	&-btn {
+		height: 5rem;
+		width: 5rem;
+    cursor: pointer;
+    
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+
+    background-image: url(../assets/ci1.jpg);
+    background-size: cover;
+    filter: grayscale(1);
+
+    border-radius: 50%;
+
+		transition: all 1s;	
+
+    &:hover { filter: grayscale(0); transform: scale(1.1) rotateZ(-6deg); }
+    &:active { filter: blur(1px); transform: translate(1px, 1px) scale(1.1) rotateZ(-5deg); }
+	}
+}
+
+
+
+
+
+/* ~~~~~ Button Flipper Media Queries ~~~~~ */
+
+.flipper {
+
+	&-btn {
+
+		@include abs.mxs-respond(big-desktop) { 
+			top: -4rem;
+	    left: -4rem;
+	    width: 8rem;
+	    height: 8rem;
+		}
+
+		@include abs.mxs-respond(tab-land) { 
+
+		}
+
+		@include abs.mxs-respond(tab-port) { 
+			top: -2rem;
+	    left: -2rem;
+	    width: 5rem;
+	    height: 5rem;
+		}
+
+		@include abs.mxs-respond(phone) { 
+			top: -2rem;
+	    left: 0rem;
+	    width: 4rem;
+	    height: 4rem;
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~ Button Top ~~~~~ */
+
+.btn-top {
+
+	height: 2rem;
+	width: 2rem;
+
+	font-size: 1.5rem;
+  
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  z-index: 1500;
+
+  display: flex;
+	align-items: center;
+	flex-direction: column;
+
+  border-radius: 50%;
+	
+	transition: all .2s;
+
+
+  &:hover { border: none; transform: scale(1.1); color: crimson; }
+  &:active { border: abs.$vars-toggle-btn crimson; }
+}
+
+
+
+
+
+/* ~~~~~ Button Top Media Queries ~~~~~ */
+
+.btn-top {
+	
+	@include abs.mxs-respond(big-desktop) {
+
+	}
+
+	@include abs.mxs-respond(tab-land) {
+
+	}
+
+	@include abs.mxs-respond(tab-port) {
+
+	}
+
+	@include abs.mxs-respond(phone) {
+
+	}
+
+	&:hover > a { 
+		@include abs.mxs-respond(big-desktop) {
+
+		}
+
+		@include abs.mxs-respond(tab-land) {
+
+		}
+
+		@include abs.mxs-respond(tab-port) {
+			color: abs.$vars-c-yellow-light;
+		}
+
+		@include abs.mxs-respond(phone) {
+			color: abs.$vars-c-yellow-light;
+		}
+	}
+  &:active {
+
+  	@include abs.mxs-respond(big-desktop) {
+
+		}
+
+		@include abs.mxs-respond(tab-land) {
+
+		}
+
+		@include abs.mxs-respond(tab-port) {
+			border: abs.$vars-toggle-btn abs.$vars-c-yellow-light;
+		}
+
+		@include abs.mxs-respond(phone) {
+			border: abs.$vars-toggle-btn abs.$vars-c-yellow-light;
+		}
+  }	
+}
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

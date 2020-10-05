@@ -1,0 +1,100 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Fonts ~~~~~ */
+
+@font-face {
+	font-family: heading;
+	src: url(../fonts/Raleway-BlackItalic.ttf) format('truetype');
+} 
+
+@font-face {
+	font-family: para;
+	src: url(../fonts/RobotoMono-SemiBoldItalic.ttf) format('truetype');
+}
+
+h1,h2,h3,h4 {
+	font-family: heading, sans-serif;
+}
+
+p,span,input[type=text] { 
+	font-family: para, sans-serif;
+	font-size: 1rem;
+	color: abs.$vars-c-white-dark; 
+}
+
+
+
+
+
+/* ~~~~~ Global Resets ~~~~~ */
+
+*,
+::before,
+::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+}
+
+html { scroll-behavior: smooth; }
+::selection { background: abs.$vars-c-primary; }
+
+/* 
+16px / 10 = 62.5%
+1rem = 10px
+*/
+
+body {
+	font-size: 62.5%;
+	line-height: 1;
+	box-sizing: border-box;
+
+	background-image: linear-gradient(145deg, rgb(137, 8, 33), rgb(231, 12, 55));
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+a, li, input[type=text] { outline: none; border: none; }
+a, li { background: transparent; }
+li { list-style: none; }
+a { text-decoration: none; color: white; }
+
+ 
+
+
+
+
+/* ~~~~~ Body Media Queries ~~~~~ */
+
+body {
+
+	@include abs.mxs-respond(big-desktop) {
+
+	}
+
+	@include abs.mxs-respond(tab-land) {
+
+	}
+
+  @include abs.mxs-respond(tab-port) {
+  	background: abs.$vars-c-yellow-light;
+	}
+
+  @include abs.mxs-respond(phone) {
+  	background: abs.$vars-c-yellow-light; 
+	}
+}
+
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

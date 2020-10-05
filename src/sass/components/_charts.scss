@@ -1,0 +1,57 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Charts ~~~~~ */
+
+.canvas{
+	
+	&-card {
+		width: 100%;
+		height: 100%;
+
+		padding: 1rem;
+		margin: 3rem 0rem 2rem;
+	}
+
+	&-global {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+
+
+
+
+/* ~~~~~ Charts Media Queries ~~~~~ */
+
+.canvas{
+	
+	&-card {
+		@include abs.mxs-respond(big-desktop){
+
+		}
+
+		@include abs.mxs-respond(tab-land){
+
+		}
+
+		@include abs.mxs-respond(tab-port){
+
+		}
+
+		@include abs.mxs-respond(phone){
+			padding: 0rem;
+		}
+	}
+}
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

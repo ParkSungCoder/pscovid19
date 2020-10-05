@@ -1,0 +1,77 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ dropdown ~~~~~ */
+
+.dropdown {
+	
+	position: relative;
+
+
+	&-container {
+
+		height: 2rem;
+		width: 14rem;
+
+		margin-right: 2rem;
+		display: none;
+
+
+		label {
+			display: inline-block; 
+			height: 100%;
+			width: 100%;
+			cursor: pointer;
+		}
+	}
+	
+
+	&-checkbox { display: none; }
+	&-checkbox:not(:checked) ~ .radio-container {
+		height: 0;
+		padding: 0; 
+		min-height: 0;
+	}	
+	&-checkbox:not(:checked) ~ .radio-container > .radio-scroll > .radio-group li {
+		display: none;
+	}	
+
+
+	&-btn {
+		height: 100%;
+		width: 100%;
+		
+		display: flex;
+		align-items: center;
+		text-align: center;
+
+		background: transparent; 
+		
+		border-radius: .3rem;
+		
+		transition: all .2s;
+
+
+		&:hover { border-bottom: abs.$vars-b-border; transform: scaleY(1.1); }
+    &:active { border-bottom: none; transform: scaleX(1.1); }
+    
+    &:hover > span { transform: scale(1.05); }
+
+		span {
+			display: inline-block;
+			width: 100%;
+			transition: all .2s;
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

@@ -1,0 +1,33 @@
+
+
+
+
+
+/* ~~~~~ Fades ~~~~~ */
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeIn-left {
+  0% { transform: translateX(-100rem); }
+  100% { transform: translateX(0rem); }
+}
+@keyframes fadeIn-right {
+  0% { transform: translateX(100rem); }
+  100% { transform: translateX(0rem); }
+}
+[data-aos] {
+	body[data-aos-easing="slide"] &,
+	&[data-aos][data-aos-easing="slide"]{
+		transition-timing-function: cubic-bezier(.1,-0.5,.5,1.5);
+	}
+}
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

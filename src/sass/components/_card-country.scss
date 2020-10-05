@@ -1,0 +1,279 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Card Country ~~~~~ */
+
+.country {
+
+	&-card {
+
+		display: grid;
+		grid-template-rows: 
+			minmax(min-content,20rem) repeat(2,minmax(max-content,min-content));	
+		grid-template-columns: 22rem;
+		overflow: hidden;
+
+		background: linear-gradient(135deg, abs.$vars-c-grey-light 0%, abs.$vars-c-black 40%, abs.$vars-c-black 50%, abs.$vars-c-black-dark 75%);
+		box-shadow: 0 0 2rem black, 1.5rem 1.5rem 1rem black;
+
+		border-radius: .5rem;
+		margin: 3rem 1rem;
+
+
+		&__header, &__middle, &__descriptions { grid-column: 1/-1; }
+
+
+		&__header {
+			grid-row: 1/2;
+			
+			background: grey;
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			position: relative;
+
+			&::before {
+				content: "";
+	      display: block;
+	      
+	      height: 100%;
+	      width: 100%;
+
+	      position: absolute;
+	      top: 0;
+	      left: 0;
+
+	      background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1),rgba(0, 0, 0, 0.3));
+			}
+		}
+
+
+		&__middle {
+			grid-row: 2/3;
+
+			position: relative;
+
+
+	    &-group:first-child { margin-top: 2rem; }
+
+
+	    &-divider { 
+		    height: 10%;
+		    width: 100%;
+		    
+		    box-shadow: 0 0 1rem black;
+
+	    	position: absolute;
+		    top: 0%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		    
+		    padding: 1rem 1rem;
+	    }
+
+
+	    &-header {
+		    width: 75%;
+		    height: 20%;
+				overflow: hidden;
+  
+		    text-align: center;
+		    line-height: 1.5;
+
+				background: abs.$vars-c-yellow-light;		    
+		    box-decoration-break: clone;
+		    
+		    position: absolute;
+		    top: 0%;
+		    left: 50%;
+		    transform: translate(-50%,-50%) skew(-15deg,0deg);
+		    
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+		    padding: 2.5rem 1rem;
+				border-radius: .5rem;
+				box-shadow: 0 0 1rem black;
+
+				transition: all .2s;
+
+		    &:hover { transform: translate(-50%, -50%) skew(-20deg, -2deg) scale(1.02); }
+		    &:active { transform: translate(-50%, -50%) skew(-20deg, -2deg) scale(1px); }
+	    }
+
+
+	    h2 {
+	    	display: inline-block;
+	    	
+	    	transform: skew(15deg,0deg);
+	    	
+	    	transition: all .2s;
+	    }
+	    &-header:hover > h2 { transform: skew(20deg, 2deg) scale(1.5); }
+		}
+
+
+		&__description {
+
+			grid-row: 3/4;
+
+			display: flex;
+	    flex-direction: column;
+	    flex-wrap: wrap;
+
+
+			&-group { 
+
+				flex-grow: 1;
+
+				display: flex;
+				align-items: center;
+			}
+
+
+			&-details {
+
+				flex-grow: 1;
+
+
+				p.details--text {
+					margin-left: 5rem; 
+
+					position: relative;
+
+					::before {
+						content: "";
+		        display: block;
+		        height: 100%;
+		        width: 100%;
+		        
+		        background-image: url(/dist/imgs/ad.jpg);
+						background-size: contain;
+						background-repeat: no-repeat;
+		        
+		        position: absolute;
+		        top: 0;
+		        left: -2rem;
+					}
+				}
+			} 			
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~ Card Country Media Queries~~~~~ */
+
+.country {
+
+	&-card {
+
+		@include abs.mxs-respond(big-desktop){
+			grid-template-rows: 
+				minmax(min-content,22rem) repeat(2,minmax(max-content,min-content));
+			grid-template-columns: 28rem;
+
+			margin: 4rem 2rem;
+		}
+
+		@include abs.mxs-respond(tab-land){
+
+		}
+
+		@include abs.mxs-respond(tab-port){
+			grid-template-rows: 
+				minmax(min-content,18rem) repeat(2,minmax(max-content,min-content));
+			grid-template-columns: 22rem;
+
+			margin: 3rem 0;
+		}
+
+		@include abs.mxs-respond(phone){
+			grid-template-rows: 
+				minmax(min-content,16rem) repeat(2,minmax(max-content,min-content));
+			grid-template-columns: 20rem;
+
+			margin: 2rem 0.5rem;
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~ Loader Card Country ~~~~~ */
+
+.loader {
+	
+	&-card {
+
+		height: 47rem;
+		width: 22rem;
+		overflow: hidden;
+
+		background: 
+			linear-gradient(135deg, rgb(120, 120, 120) 0%, RGB(27, 27, 27) 40%,
+			RGB(27, 27, 27) 50%, rgb(11, 11, 11) 75%);
+		box-shadow: 0 0 2rem rgb(0, 0, 0), 1.5rem 1.5rem 1rem rgb(0, 0, 0);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		position: relative;
+		margin: 3rem 1rem;
+
+		border-radius: .5rem;
+	}
+}
+
+
+
+
+
+/* ~~~~~ Loader Card Country Media Queries ~~~~~ */
+
+.loader {
+	
+	&-card {
+
+		@include abs.mxs-respond(big-desktop){
+			height: 55rem;
+			width: 28rem;
+			margin: 4rem 2rem;
+		}
+
+		@include abs.mxs-respond(tab-land){
+
+		}
+
+		@include abs.mxs-respond(tab-port){
+			height: 45rem;
+			width: 22rem;
+			margin: 3rem 0;
+		}
+
+		@include abs.mxs-respond(phone){
+			height: 41rem;
+			width: 18rem;
+			margin: 2rem 0.5rem;
+		}
+	}
+}
+
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

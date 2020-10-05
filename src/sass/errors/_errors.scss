@@ -1,0 +1,408 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Errors ~~~~~ */
+
+.errors {
+	
+	transition: all .2s;
+	
+	&-cont {
+		position: relative;
+	}
+	
+	&-btn {  
+		height: 5.5rem;
+		width: 5.5rem;
+		cursor: pointer;
+
+		background: abs.$vars-c-black-dark;
+
+		position: absolute;
+		top: -5rem;
+		right: 0rem;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border-radius: 50%;
+
+		transition: all .2s;
+
+
+		&-hamberg {
+			
+			width: 75%;
+			
+			position: relative;
+
+			&,
+			&::before,
+			&::after {
+				display: inline-block;
+				height: 5px;
+				background: crimson;
+			}
+			&::before,
+			&::after{
+				content: '';
+				width: 75%;
+
+				position: absolute;
+				left: 0;
+
+				transition: all .2s; 
+			}
+			&:before { top: -.6rem; }
+			&:after { top: .6rem; }
+		}
+		
+		&:hover > &-hamberg {
+			&::before { top: -.7rem; }
+			&::after { top: .7rem; } 
+		}
+    &:active > &-hamberg { 
+    	background: transparent;
+
+	    &::after { top: 0; transform: rotate(-135deg); }
+	    &::before { top: 0; transform: rotate(135deg); }
+    }
+	}
+
+	&-noresults,&-requestfailed {
+		height: 100%;
+		width: 100%;
+
+		background: rgba(27, 27, 27, 0.6);
+		
+		position: absolute;
+		top: 0;
+    left: 0;
+		z-index: 100;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+
+    h1 {
+			width: 100%;
+			font-size: 6rem;
+			text-align: center;
+			color: transparent;
+
+    	background: abs.$vars-gradient-header-heading;
+			background-clip: text;
+    }
+	}
+}
+
+
+
+
+
+/* ~~~~~ Errors ~~~~~ */
+
+.errors {
+	
+	@include abs.mxs-respond(big-desktop) {
+
+  }
+
+	@include abs.mxs-respond(tab-land) {
+
+  }
+
+	@include abs.mxs-respond(tab-port) {
+
+  }
+
+	@include abs.mxs-respond(phone) {
+
+  }
+
+	&:hover > &-cont > &-btn {
+  	@include abs.mxs-respond(big-desktop) {
+
+    }
+
+		@include abs.mxs-respond(tab-land) {
+
+    }
+
+		@include abs.mxs-respond(tab-port) {
+
+    }
+
+		@include abs.mxs-respond(phone) {
+			opacity: 1;
+    }
+  }
+
+  &:hover > &-cont > h1 {
+  	@include abs.mxs-respond(big-desktop) {
+
+    }
+
+		@include abs.mxs-respond(tab-land) {
+
+    }
+
+		@include abs.mxs-respond(tab-port) {
+
+    }
+
+		@include abs.mxs-respond(phone) {
+			filter: blur(3px);
+    }
+  }
+	
+	&-btn { 
+
+		@include abs.mxs-respond(big-desktop) {
+
+    }
+
+		@include abs.mxs-respond(tab-land) {
+
+    }
+
+		@include abs.mxs-respond(tab-port) {
+    	top: -5rem;
+			right: 0rem;
+			height: 4rem;
+			width: 4rem;
+    }
+
+		@include abs.mxs-respond(phone) {
+			opacity: 0;
+			top: -150%;
+			right: 0%;
+			transform: translate(50%,-50%);
+
+			height: 4rem;
+			width: 4rem;
+    }
+
+		&-hamberg {
+			
+			@include abs.mxs-respond(big-desktop) {
+
+	    }
+
+			@include abs.mxs-respond(tab-land) {
+
+	    }
+
+			@include abs.mxs-respond(tab-port) {
+				height: 4px;
+				width: 50%;
+	    }
+
+			@include abs.mxs-respond(phone) {
+				height: 3px;
+				width: 50%;
+	    }
+
+	    &, &::before, &::after {
+	    	@include abs.mxs-respond(big-desktop) {
+
+		    }
+
+				@include abs.mxs-respond(tab-land) {
+
+		    }
+
+				@include abs.mxs-respond(tab-port) {
+			  	background: abs.$vars-c-yellow-light;
+		    }
+
+				@include abs.mxs-respond(phone) {
+			  	background: abs.$vars-c-yellow-light;
+		    }
+	    }
+
+			&::before { 
+
+				@include abs.mxs-respond(big-desktop) {
+
+		    }
+
+				@include abs.mxs-respond(tab-land) {
+
+		    }
+
+				@include abs.mxs-respond(tab-port) { 
+					top: -.5rem; height: 4px; 
+				}
+				
+				@include abs.mxs-respond(phone) { 
+					top: -.4rem; height: 3px; 
+				}
+			}
+
+			&::after { 
+
+				@include abs.mxs-respond(big-desktop) {
+
+		    }
+
+				@include abs.mxs-respond(tab-land) {
+
+		    }
+
+				@include abs.mxs-respond(tab-port) { 
+					top: .5rem; height: 4px; 
+				}
+				
+				@include abs.mxs-respond(phone) { 
+					top: .4rem; height: 3px; 
+				}
+			}
+		}
+		
+
+		&:hover > &-hamberg {
+
+			&::before{ 
+				@include abs.mxs-respond(big-desktop) {
+
+		    }
+
+				@include abs.mxs-respond(tab-land) {
+
+		    }
+
+				@include abs.mxs-respond(tab-port) { 
+					top: -.6rem; 
+				}
+
+				@include abs.mxs-respond(phone) { 
+					top: -.5rem; 
+				}
+			}
+
+			&::after{ 
+
+	    	@include abs.mxs-respond(big-desktop) {
+
+		    }
+
+				@include abs.mxs-respond(tab-land) {
+
+		    }
+
+	    	@include abs.mxs-respond(tab-port) { 
+	    		top: .6rem; 
+	    	}
+				
+				@include abs.mxs-respond(phone) { 
+					top: .5rem; 
+				} 
+	    } 
+		}
+
+		&:active > &-hamberg {
+
+			&::before{ 
+				@include abs.mxs-respond(big-desktop) {
+
+		    }
+
+				@include abs.mxs-respond(tab-land) {
+
+		    }
+
+				@include abs.mxs-respond(tab-port) { 
+					top: 0rem; transform: rotate(135deg);
+				}
+
+				@include abs.mxs-respond(phone) { 
+					top: 0rem; transform: rotate(135deg);
+				}
+			}
+
+			&::after{ 
+
+	    	@include abs.mxs-respond(big-desktop) {
+
+		    }
+
+				@include abs.mxs-respond(tab-land) {
+
+		    }
+
+	    	@include abs.mxs-respond(tab-port) { 
+	    		top: 0rem; transform: rotate(-135deg);
+	    	}
+				
+				@include abs.mxs-respond(phone) { 
+					top: 0rem; transform: rotate(-135deg);
+				} 
+	    } 
+		}
+	}
+
+
+	&-noresults, &-requestfailed {
+
+    @include abs.mxs-respond(big-desktop) {
+
+    }
+
+		@include abs.mxs-respond(tab-land) {
+
+    }
+
+    @include abs.mxs-respond(tab-port) {
+    	padding: 0;
+    }
+
+    @include abs.mxs-respond(phone) {
+    	padding: 0;
+    }
+
+
+    h1 {
+
+			@include abs.mxs-respond(big-desktop) {
+
+	    }
+
+			@include abs.mxs-respond(tab-land) {
+
+	    }
+
+			@include abs.mxs-respond(tab-port) {
+				font-size: 5rem;
+	    	width: 100%;
+
+	    	color: abs.$vars-c-yellow-light;
+				background: transparent;
+				background-clip: border-box;
+	    }
+
+			@include abs.mxs-respond(phone) {
+				font-size: 2.5rem;
+	    	width: 100%;
+
+	    	color: abs.$vars-c-yellow-light;
+				background: transparent;
+				background-clip: border-box;
+	    }
+    }
+	}
+}
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */

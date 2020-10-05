@@ -1,0 +1,136 @@
+@use "abstracts/abstracts" as abs;
+
+
+
+
+
+/* ~~~~~ Dropdown List ~~~~~ */
+
+.radio {
+	
+	&-scroll {
+
+		height: 0rem;
+		overflow-y: auto;
+		overflow-x: hidden;
+		transition: all .2s;
+
+		.radio-group {
+			height: 2.5rem;
+
+			background: abs.$vars-c-black;
+			cursor: pointer;
+			
+			display: flex;
+			align-items: center;
+
+			transition: all .2s;
+
+
+			&:hover { border-left: abs.$vars-l-border; }
+			&:active { background: abs.$vars-c-grey-dark; }
+			&:hover > li { transform: translateX(1rem); }
+			&:hover > li span { color: crimson; }
+
+			li { margin-left: 1rem; transition: all .2s; }
+		}
+	}
+	
+
+	&-container {
+		
+		height: 0;
+		min-height: 10rem;
+		
+		position: relative;
+		top: 1.5rem;
+		left: 0rem;
+		
+		transition: all .2s;
+	}
+
+
+	&-input { display: none; }
+  &-input:checked + &-group > li { background: abs.$vars-c-grey-dark; padding: .3rem; }
+  &-input:checked + &-group > li > span { color: crimson; }
+}
+
+
+
+
+
+/* ~~~~~ Dropdown List Media Queries ~~~~~ */
+
+.radio {
+	
+	&-scroll {
+
+		.radio-group {
+
+			&:hover { 
+
+	      @include abs.mxs-respond(big-desktop) {
+
+	      }
+
+	      @include abs.mxs-respond(tab-land) {
+
+	      }
+
+	      @include abs.mxs-respond(tab-port) {
+	        border-left: 2px solid abs.$vars-c-yellow-light;
+	      }
+
+	      @include abs.mxs-respond(phone) {
+	        border-left: 2px solid abs.$vars-c-yellow-light;
+	      }
+			}
+
+			&:hover > li > span { 
+
+	      @include abs.mxs-respond(big-desktop) {
+
+	      }
+
+	      @include abs.mxs-respond(tab-land) {
+
+	      }
+
+	      @include abs.mxs-respond(tab-port) {
+	        color: abs.$vars-c-yellow-light;
+	      }
+
+	      @include abs.mxs-respond(phone) {
+	        color: abs.$vars-c-yellow-light;
+	      }
+			}
+		}
+	}
+
+	&-input:checked + &-group > li > span { 
+		@include abs.mxs-respond(big-desktop) {
+
+    }
+
+    @include abs.mxs-respond(tab-land) {
+
+    }
+
+    @include abs.mxs-respond(tab-port) {
+      color: abs.$vars-c-yellow-light;
+    }
+
+    @include abs.mxs-respond(phone) {
+      color: abs.$vars-c-yellow-light;
+    }
+	}
+}
+
+
+
+
+
+
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
+/* ~~~~~ ~~~~~ */
